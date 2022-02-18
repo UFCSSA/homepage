@@ -4,7 +4,7 @@ import Header from '../components/Headers/Header';
 import Footer from '../components/Footers/Footer';
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb';
 
-const LIMIT = 3;
+const LIMIT = 6;
 
 const ArticleContainer = () => {
   return (
@@ -20,6 +20,7 @@ const ArticleContainer = () => {
             <Articles />
           </div>
         </section>
+
         <Footer />
       </div>
     </div>
@@ -61,42 +62,52 @@ const Articles = () => {
   };
 
   return (
-    <div className='row'>
-      {articles.map((item, idx) => {
-        return (
-          <div key={`bth_${idx}`} className='col-12 col-md-6 col-lg-4'>
-            <div className='single-blog res-margin'>
-              <div className='blog-thumb'>
-                <a href={item.url} target='_blank'>
-                  <img src={item.thumbnail} alt='Article thumbnail' />
-                </a>
-              </div>
-              <div className='blog-content p-4'>
-                <ul className='meta-info d-flex justify-content-between'>
-                  <li>
-                    By{' '}
-                    <h6 className='text-primary' style={{ display: 'inline' }}>
-                      UFCSSA
-                    </h6>
-                  </li>
-                  <li>
-                    <h6>{item.createdAt}</h6>
-                  </li>
-                </ul>
-                <h3 className='blog-title my-3'>
-                  <a href={item.url} target='_blank'>
-                    {item.name}
+    <div>
+      <div className='row'>
+        {articles.map((item, idx) => {
+          return (
+            <div key={`bth_${idx}`} className='col-12 col-md-6 col-lg-4'>
+              <div className='single-blog res-margin'>
+                <div className='blog-thumb'>
+                  <a href={item.url} target='_blank' rel='noreferrer'>
+                    <img src={item.thumbnail} alt='Article thumbnail' />
                   </a>
-                </h3>
-                <p>{item.summary}</p>
-                <a href={item.url} target='_blank' className='blog-btn mt-3'>
-                  Read More
-                </a>
+                </div>
+                <div className='blog-content p-4'>
+                  <ul className='meta-info d-flex justify-content-between'>
+                    <li>
+                      By{' '}
+                      <h6
+                        className='text-primary'
+                        style={{ display: 'inline' }}
+                      >
+                        UFCSSA
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>{item.createdAt}</h6>
+                    </li>
+                  </ul>
+                  <h3 className='blog-title my-3'>
+                    <a href={item.url} target='_blank' rel='noreferrer'>
+                      {item.name}
+                    </a>
+                  </h3>
+                  <p>{item.summary}</p>
+                  <a
+                    href={item.url}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='blog-btn mt-3'
+                  >
+                    Read More
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
       {!loading && !articlesEnd && (
         <button onClick={getMoreArticles}>Load more</button>
       )}

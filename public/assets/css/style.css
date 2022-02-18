@@ -2276,8 +2276,8 @@ img {
 /* Loader */
 
 .loader {
-  border: 10px solid var(--color-bg);
-  border-top: 10px solid var(--color-blue);
+  border: 10px solid #ffffff;
+  border-top: 10px solid #7c4fe0;
   border-radius: 50%;
   width: 50px;
   height: 50px;
