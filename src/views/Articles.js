@@ -109,7 +109,9 @@ const Articles = () => {
         })}
       </div>
       {!loading && !articlesEnd && (
-        <button onClick={getMoreArticles}>Load more</button>
+        <button onClick={getMoreArticles} className='btn mt-3'>
+          Load more
+        </button>
       )}
       {loading ? <div className='loader'></div> : null}
 
