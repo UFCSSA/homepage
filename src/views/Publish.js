@@ -53,12 +53,14 @@ const PublishForm = () => {
   const [thumbnail, setThumbnail] = useState('');
   const [summary, setSummary] = useState('');
   const [date, setDate] = useState('');
+  const [category, setCategory] = useState('');
 
   const submitHandler = async (e) => {
     e.preventDefault();
     const res = await firestore.collection('Articles').add({
       name,
       url,
+      category,
       thumbnail,
       summary,
       createdAt: date,
@@ -66,6 +68,7 @@ const PublishForm = () => {
     console.log(res);
     myForm.current.reset();
     setName('');
+    setCategory('');
     setUrl('');
     setThumbnail('');
     setSummary('');
@@ -90,6 +93,29 @@ const PublishForm = () => {
               />
             </div>
             <div className='form-group'>
+              <select
+                type='text'
+                className='form-control'
+                required='required'
+                onChange={(e) => setCategory(e.target.value)}
+              >
+                <option value='' disabled selected>
+                  Select a category
+                </option>
+                <option value='UF Resource'>UF Resource</option>
+                <option value='New Student Resource'>
+                  New Student Resource
+                </option>
+                <option value='UF Trivia'>UF Trivia</option>
+                <option value='Alumni Connection'>Alumni Connection</option>
+                <option value='UF Lab Hiring'>UF Lab Hiring</option>
+                <option value='Gainesville Resource'>
+                  Gainesville Resource
+                </option>
+                <option value='Past Event'>Past Event</option>
+              </select>
+            </div>
+            <div className='form-group'>
               <input
                 type='text'
                 className='form-control'
@@ -111,7 +137,6 @@ const PublishForm = () => {
                 value={thumbnail}
               />
             </div>
-
             <div className='form-group'>
               <textarea
                 className='form-control'
