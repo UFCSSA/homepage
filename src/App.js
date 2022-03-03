@@ -5,6 +5,7 @@ import Articles from './views/Articles';
 import PastEvent from './views/PastEvent';
 import Publish from './views/Publish';
 import { Toaster } from 'react-hot-toast';
+import Calendar from './views/Calendar';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/articles' element={<Articles />} />
+        <Route path='/calendar' element={<Calendar />} />
         <Route path='/past-events' element={<PastEvent />} />
         <Route path='/admin/publish' element={<Publish />} />
       </Routes>
