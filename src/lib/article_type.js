@@ -8,11 +8,12 @@ export const article_type = {
   past_event: 'Past Event',
 };
 
-export const noPastEvent = [
+export const article_type_arr = [
   article_type.uf_resource,
   article_type.new_student_resource,
   article_type.alumni_connection,
   article_type.gainesville_resource,
   article_type.uf_trivia,
   article_type.uf_lab_hiring,
+  article_type.past_event,
 ];

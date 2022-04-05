@@ -3,7 +3,7 @@ import Header from '../components/Headers/Header';
 import Footer from '../components/Footers/Footer';
 import Article from '../components/Articles/Article';
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb';
-import { noPastEvent } from '../lib/article_type';
+import { article_type_arr } from '../lib/article_type';
 
 const Articles = () => {
   const [category, setCategory] = useState('All');
@@ -34,7 +34,7 @@ const Articles = () => {
                 All
               </a>
             </li>
-            {noPastEvent.map((value, i) => (
+            {article_type_arr.map((value, i) => (
               <li className='nav-item' key={i}>
                 <a
                   className='nav-link'

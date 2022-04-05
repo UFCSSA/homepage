@@ -40,7 +40,7 @@ const PastEvent = () => {
         <div className='main'>
           <Header imageData={'/image/cssa_logo_long1.png'} />
           <Breadcrumb title={param.event} />
-          <section id='blog' className='section blog-area ptb_100'>
+          <section id='blog' className='section blog-area ptb_50'>
             <div className='container'>
               <div className='img-grid'>
                 {images &&
