@@ -30,8 +30,7 @@ const EventList = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const query = firestore.collection('Past-Events');
-
+      const query = firestore.collection('Past-Events').orderBy('date', 'desc');
       const res = await query.get();
       setEvenets(res.docs.map((doc) => doc.data()));
     };
@@ -46,7 +45,7 @@ const EventList = () => {
             <div className='single-blog res-margin'>
               <div className='blog-thumb'>
                 <a
-                  href={`http://localhost:3000/past-events/${item.date}-${item.name}`}
+                  href={`http://localhost:3000/past-events/${item.slug}`}
                   target='_blank'
                   rel='noreferrer'
                 >
@@ -56,12 +55,12 @@ const EventList = () => {
               <div className='blog-content p-4'>
                 <ul className='meta-info d-flex justify-content-between'>
                   <li>
-                    <h6>{item.createdAt}</h6>
+                    <h6>{item.date}</h6>
                   </li>
                 </ul>
                 <h3 className='blog-title my-3'>
                   <a
-                    href={`http://localhost:3000/past-events/${item.name}${item.date}`}
+                    href={`http://localhost:3000/past-events/${item.slug}`}
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -70,7 +69,7 @@ const EventList = () => {
                 </h3>
                 <p>{item.summary}</p>
                 <a
-                  href={`http://localhost:3000/past-events/${item.name}${item.date}`}
+                  href={`http://localhost:3000/past-events/${item.slug}`}
                   target='_blank'
                   rel='noreferrer'
                   className='blog-btn mt-3'
