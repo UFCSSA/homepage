@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import Header from '../components/Headers/Header';
 import Footer from '../components/Footers/Footer';
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb';
@@ -9,6 +9,8 @@ import { motion } from 'framer-motion';
 
 const PastEvent = () => {
   const param = useParams();
+  const location = useLocation();
+  console.log(location);
   const [images, setImages] = useState([]);
 
   const [selectedImg, setSelectedImg] = useState(null);
@@ -40,7 +42,7 @@ const PastEvent = () => {
         <div className='main'>
           <Header imageData={'/image/cssa_logo_long1.png'} />
           <Breadcrumb title={param.event} />
-          <section id='blog' className='section blog-area ptb_100'>
+          <section id='blog' className='section blog-area ptb_50'>
             <div className='container'>
               <div className='img-grid'>
                 {images &&

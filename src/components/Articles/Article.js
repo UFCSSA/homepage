@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { firestore } from '../../lib/firebase';
-import { noPastEvent } from '../../lib/article_type';
+import { article_type_arr } from '../../lib/article_type';
 const LIMIT = 6;
 
 const Article = ({ category }) => {
@@ -19,7 +19,7 @@ const Article = ({ category }) => {
               .limit(LIMIT)
           : firestore
               .collection('Articles')
-              .where('category', 'in', noPastEvent)
+              .where('category', 'in', article_type_arr)
               .orderBy('createdAt', 'desc')
               .limit(LIMIT);
       const res = await articleQuery.get();
@@ -42,7 +42,7 @@ const Article = ({ category }) => {
             .limit(LIMIT)
         : firestore
             .collection('Articles')
-            .where('category', 'in', noPastEvent)
+            .where('category', 'in', article_type_arr)
             .orderBy('createdAt', 'desc')
             .startAfter(last.createdAt)
             .limit(LIMIT);
