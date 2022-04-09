@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+
+library.add(faTiktok);
 
 ReactDOM.render(
   <React.StrictMode>

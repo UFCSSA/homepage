@@ -76,22 +76,4 @@ const PastEvent = () => {
   );
 };
 
-const Image = ({ path }) => {
-  const [url, setUrl] = useState('');
-  useEffect(() => {
-    const getUrl = async () => {
-      const imageRef = storageRef.child(path);
-      const urlRes = await imageRef.getDownloadURL();
-      setUrl(urlRes);
-    };
-    getUrl();
-  }, [path]);
-
-  return (
-    <>
-      <img src={url}></img>
-    </>
-  );
-};
-
 export default PastEvent;

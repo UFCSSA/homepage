@@ -45,7 +45,7 @@ const EventList = () => {
           <div key={`bth_${idx}`} className='col-12 col-md-6 col-lg-4'>
             <div className='single-blog res-margin'>
               <div className='blog-thumb'>
-                <Link to={item.slug} target='_blank'>
+                <Link to={item.slug}>
                   <img src={item.thumbnail} alt='Article thumbnail' />
                 </Link>
               </div>
@@ -56,12 +56,10 @@ const EventList = () => {
                   </li>
                 </ul>
                 <h3 className='blog-title my-3'>
-                  <Link to={item.slug} target='_blank'>
-                    {item.name}
-                  </Link>
+                  <Link to={item.slug}>{item.name}</Link>
                 </h3>
                 <p>{item.summary}</p>
-                <Link to={item.slug} target='_blank' className='blog-btn mt-3'>
+                <Link to={item.slug} className='blog-btn mt-3'>
                   See More
                 </Link>
               </div>

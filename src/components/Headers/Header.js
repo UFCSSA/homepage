@@ -60,13 +60,7 @@ const Header = ({ imageData }) => {
               </a>
             </li>
             <li className='nav-item'>
-              <a className='nav-link scroll' href='/#screenshots'>
-                Screenshots
-              </a>
-            </li>
-
-            <li className='nav-item'>
-              <a className='nav-link scroll' href='/#contact'>
+              <a className='nav-link scroll' href='/contact'>
                 Contact
               </a>
             </li>

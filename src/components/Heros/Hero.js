@@ -21,11 +21,9 @@ const Hero = () => {
           <div className='col-12 col-md-7 col-lg-6'>
             <div className='welcome-intro'>
               <h1 className='text-white'>
-                {data.heading}
-                <br />
-                {data.headingTwo}
+                Chinese Students and Scholars Association
               </h1>
-              <p className='text-white my-4'>{data.content}</p>
+              <p className='text-white my-4'>佛罗里达大学中国学生学者联合会</p>
             </div>
           </div>
           <div className='col-12 col-md-5 col-lg-6'>

@@ -91,8 +91,8 @@ const Footer = () => {
         {/* Footer Top */}
         <div className='footer-top ptb_100'>
           <div className='container'>
-            <div className='row'>
-              <div className='col-12 col-sm-6 col-lg-3'>
+            <div className='row justify-content-md-center'>
+              <div className='col-12 col-sm-8 col-lg-4'>
                 {/* Footer Items */}
                 <div className='footer-items'>
                   {/* Logo */}
@@ -127,39 +127,6 @@ const Footer = () => {
                       );
                     })}
                   </ul>
-                </div>
-              </div>
-              <div className='col-12 col-sm-6 col-lg-3'>
-                {/* Footer Items */}
-                <div className='footer-items'>
-                  {/* Footer Title */}
-                  <h3 className='footer-title mb-2'>{data.linkText_2}</h3>
-                  <ul>
-                    {footerList_2.map((item, idx) => {
-                      return (
-                        <li key={`flt_${idx}`} className='py-2'>
-                          <a href='/#'>{item.text}</a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
-              <div className='col-12 col-sm-6 col-lg-3'>
-                {/* Footer Items */}
-                <div className='footer-items'>
-                  {/* Footer Title */}
-                  <h3 className='footer-title mb-2'>{data.linkText_3}</h3>
-                  {/* Store Buttons */}
-                  <div className='button-group store-buttons store-black d-flex flex-wrap'>
-                    {footerList_3.map((item, idx) => {
-                      return (
-                        <a key={`flth_${idx}`} href='/#'>
-                          <img src={item.image} alt='' />
-                        </a>
-                      );
-                    })}
-                  </div>
                 </div>
               </div>
             </div>

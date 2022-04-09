@@ -1,9 +1,10 @@
 import React from 'react';
 import ContactForm from './ContactForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Contact = () => {
   const data = {
-    heading: 'Stay Tuned',
+    heading: 'Follow Us',
     headingText:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.',
     headingTexttwo:
@@ -14,18 +15,59 @@ const Contact = () => {
   const iconList = [
     {
       id: 1,
-      iconClass: 'fas fa-home',
-      text: 'Vestibulum nulla libero, convallis, tincidunt suscipit diam, DC 2002',
+      link: 'instagram',
+      iconClass: 'fab fa-instagram',
+      text: 'Instagram: ufcssa',
+      style: { backgroundColor: '#e1306c' },
     },
     {
       id: 2,
-      iconClass: 'fas fa-phone-alt',
-      text: '+1 230 456 789-012 345 6789',
+      link: 'facebook',
+      iconClass: 'fab fa-facebook-f',
+      text: 'Facebook: UF Cssa',
+      style: { backgroundColor: '#3b5999' },
     },
     {
       id: 3,
-      iconClass: 'fas fa-envelope',
-      text: 'exampledomain@domain.com',
+      link: 'tiktok',
+      iconClass: 'fa-brands fa-tiktok',
+      text: 'Tiktok: UFCSSA',
+      style: { backgroundColor: '#25F4EE' },
+    },
+    {
+      id: 9,
+      link: 'tiktok',
+      iconClass: 'fa-brands fa-tiktok',
+      text: '抖音: UFCSSA',
+      style: { backgroundColor: '#25F4EE' },
+    },
+    {
+      id: 4,
+      link: 'wechat',
+      iconClass: 'fa-brands fa-weixin',
+      text: '微信公众号: UFCSSA',
+      style: { backgroundColor: '#7BB32E' },
+    },
+    {
+      id: 5,
+      link: 'Little Red Book',
+      iconClass: 'fa-solid fa-book',
+      text: '小红书: 佛罗里达大学UFCSSA',
+      style: { backgroundColor: '#ff2742' },
+    },
+    {
+      id: 6,
+      link: 'weibo',
+      iconClass: 'fa-brands fa-weibo',
+      text: '微博: 佛罗里达大学UFCSSA',
+      style: { backgroundColor: '#DF2029' },
+    },
+    {
+      id: 7,
+      link: 'zhihu',
+      iconClass: 'fa-brands fa-zhihu',
+      text: '知乎: 佛罗里达大学学联UFCSSA',
+      style: { backgroundColor: '#0e88eb' },
     },
   ];
   return (
@@ -36,8 +78,6 @@ const Contact = () => {
             {/* Section Heading */}
             <div className='section-heading text-center'>
               <h2 className='text-capitalize'>{data.heading}</h2>
-              <p className='d-none d-sm-block mt-4'>{data.headingText}</p>
-              <p className='d-block d-sm-none mt-4'>{data.headingTexttwo}</p>
             </div>
           </div>
         </div>
@@ -45,14 +85,13 @@ const Contact = () => {
           <div className='col-12 col-md-5'>
             {/* Contact Us */}
             <div className='contact-us'>
-              <p className='mb-3'>{data.content}</p>
               <ul>
                 {iconList.map((item, idx) => {
                   return (
                     <li key={`ci_${idx}`} className='py-2'>
                       <a className='media' href='/#'>
-                        <div className='social-icon mr-3'>
-                          <i className={item.iconClass} />
+                        <div className='social-icon mr-3' style={item.style}>
+                          <FontAwesomeIcon icon={item.iconClass} />
                         </div>
                         <span className='media-body align-self-center'>
                           {item.text}

@@ -40,7 +40,7 @@ const Discovers = () => {
           <div className='col-12 col-lg-6 order-1 order-lg-2'>
             {/* Discover Text */}
             <div className='discover-text pt-4 pt-lg-0 px-0 px-lg-4'>
-              <h2 className='pb-4'>{data.headingSix}</h2>
+              <h2 className='pb-4'>Event Overview</h2>
               {/* Service List */}
               <ul className='service-list style-two'>
                 {/* Single Service */}
